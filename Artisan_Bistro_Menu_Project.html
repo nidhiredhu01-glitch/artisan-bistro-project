@@ -1,0 +1,197 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Artisan Bistro - Digital Menu</title>
+    <style>
+        @page {
+            size: A4;
+            margin: 0;
+        }
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Playfair Display', serif;
+            background-color: #1a1a1a;
+            color: #e0d5c0;
+        }
+        .container {
+            width: 100%;
+            min-height: 297mm; /* A4 Height */
+            background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
+                              url('https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?auto=format&fit=crop&q=80&w=2000');
+            background-size: cover;
+            background-attachment: fixed;
+            padding: 40px;
+            box-sizing: border-box;
+            border: 15px solid #c5a059;
+            outline: 5px solid #1a1a1a;
+            outline-offset: -10px;
+        }
+        header {
+            text-align: center;
+            margin-bottom: 50px;
+            border-bottom: 2px solid #c5a059;
+            padding-bottom: 20px;
+        }
+        h1 {
+            font-size: 36pt;
+            margin: 0;
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            color: #c5a059;
+        }
+        .tagline {
+            font-style: italic;
+            font-size: 14pt;
+            color: #ffffff;
+        }
+        .menu-grid {
+            display: block;
+        }
+        .category-title {
+            font-size: 22pt;
+            color: #c5a059;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            text-transform: capitalize;
+            border-left: 4px solid #c5a059;
+            padding-left: 15px;
+        }
+        
+        /* Ordered List Styling */
+        ol.chef-specials {
+            list-style: none;
+            counter-reset: my-counter;
+            padding: 0;
+        }
+        ol.chef-specials li {
+            counter-increment: my-counter;
+            margin-bottom: 25px;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 15px;
+            border-radius: 5px;
+            position: relative;
+        }
+        ol.chef-specials li::before {
+            content: counter(my-counter);
+            color: #c5a059;
+            font-weight: bold;
+            font-size: 20pt;
+            position: absolute;
+            left: -30px;
+            top: 10px;
+        }
+
+        /* Unordered List Styling */
+        ul.regular-menu {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        ul.regular-menu li {
+            width: 48%;
+            margin-bottom: 20px;
+            border-bottom: 1px dashed #c5a059;
+            padding-bottom: 10px;
+        }
+
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            font-weight: bold;
+            font-size: 14pt;
+        }
+        .price { color: #c5a059; }
+        .description {
+            font-size: 10pt;
+            color: #bbb;
+            font-family: 'Arial', sans-serif;
+            margin-top: 5px;
+            line-height: 1.4;
+        }
+        .dish-preview {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 4px;
+            margin-bottom: 10px;
+            border: 1px solid #c5a059;
+        }
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            font-size: 10pt;
+            color: #888;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>The Artisan Bistro</h1>
+            <p class="tagline">Fine Dining & Crafted Cocktails</p>
+        </header>
+
+        <div class="menu-grid">
+            <h2 class="category-title">Chef's Signature Selection</h2>
+            <ol class="chef-specials">
+                <li>
+                    <div class="item-header">
+                        <span>Wagyu Beef Carpaccio</span>
+                        <span class="price">$28</span>
+                    </div>
+                    <p class="description">Truffle aioli, capers, parmesan shavings, and micro-greens. Thinly sliced premium Wagyu beef served chilled.</p>
+                </li>
+                <li>
+                    <div class="item-header">
+                        <span>Pan-Seared Scallops</span>
+                        <span class="price">$34</span>
+                    </div>
+                    <p class="description">Hokkaido scallops served over a bed of pea purée with crispy pancetta and lemon butter sauce.</p>
+                </li>
+            </ol>
+
+            <h2 class="category-title">Main Course</h2>
+            <ul class="regular-menu">
+                <li>
+                    <div class="item-header">
+                        <span>Wild Mushroom Risotto</span>
+                        <span class="price">$24</span>
+                    </div>
+                    <p class="description">Creamy Arborio rice with porcini, shiitake, and button mushrooms, finished with white truffle oil.</p>
+                </li>
+                <li>
+                    <div class="item-header">
+                        <span>Herbed Crust Lamb Rack</span>
+                        <span class="price">$42</span>
+                    </div>
+                    <p class="description">Premium New Zealand lamb with a rosemary herb crust, served with fondant potatoes and red wine jus.</p>
+                </li>
+                <li>
+                    <div class="item-header">
+                        <span>Atlantic Cedar Salmon</span>
+                        <span class="price">$31</span>
+                    </div>
+                    <p class="description">Maple-glazed salmon grilled on cedar wood, served with roasted seasonal vegetables.</p>
+                </li>
+                <li>
+                    <div class="item-header">
+                        <span>Truffle Carbonara</span>
+                        <span class="price">$26</span>
+                    </div>
+                    <p class="description">Handmade fettuccine, guanciale, pecorino romano, egg yolk, and freshly shaved black truffle.</p>
+                </li>
+            </ul>
+        </div>
+
+        <footer>
+            <p>Please inform your server of any food allergies. &bull; 10% Service charge applies.</p>
+        </footer>
+    </div>
+</body>
+</html>
